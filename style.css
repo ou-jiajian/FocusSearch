@@ -1,0 +1,121 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #ece9e6 0%, #ffffff 100%); /* 添加渐变背景 */
+    color: #333;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.95); /* 略微透明的背景 */
+    padding: 50px;
+    border-radius: 16px; /* 更大的圆角 */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* 更柔和的阴影 */
+    text-align: center;
+    width: 90%; 
+    max-width: 700px; /* 适当调整最大宽度 */
+    margin-left: auto; 
+    margin-right: auto; 
+    backdrop-filter: blur(5px); /* 毛玻璃效果 */
+}
+
+h1 {
+    color: #007bff; /* 更改为更通用的蓝色 */
+    margin-bottom: 40px; /* 增大底部边距 */
+    font-size: 2.8em; /* 略微增大字体 */
+    font-weight: 600;
+}
+
+.search-form {
+    display: flex;
+    gap: 15px; /* 增大元素间距 */
+    margin-bottom: 40px; /* 增大底部边距 */
+    align-items: center;
+}
+
+#platform-selector, #search-query {
+    padding: 15px 18px; /* 增大内边距 */
+    border: 1px solid #ced4da;
+    border-radius: 8px; /* 更大的圆角 */
+    font-size: 1.05em; /* 略微增大字体 */
+    outline: none;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    background-color: #fff; /* 确保背景色为白色 */
+}
+
+#platform-selector:focus, #search-query:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* 添加 Bootstrap 风格的 focus 效果 */
+}
+
+#platform-selector {
+    flex-shrink: 0;
+    appearance: none; /* 移除默认下拉箭头样式，便于自定义 */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    padding-right: 2.5rem; /* 为自定义箭头留出空间 */
+}
+
+#search-query {
+    flex-grow: 1;
+}
+
+#search-button {
+    padding: 15px 30px; /* 增大内边距 */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px; /* 更大的圆角 */
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+
+#search-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px); /* 轻微上移效果 */
+}
+
+#search-button:active {
+    background-color: #004085;
+    transform: translateY(0px);
+}
+
+.description {
+    font-size: 1em; /* 增大字体 */
+    color: #555; /* 略微加深颜色 */
+    line-height: 1.7;
+    margin-top: 30px; /* 增大顶部边距 */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* 在小屏幕上使用更大的宽度百分比 */
+        margin: 20px auto; /* 保持水平居中 */
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .search-form {
+        flex-direction: column;
+    }
+
+    #platform-selector, #search-query, #search-button {
+        width: 100%;
+        box-sizing: border-box; /* Ensures padding doesn't add to width */
+    }
+
+    #search-button {
+        margin-top: 10px;
+    }
+}
